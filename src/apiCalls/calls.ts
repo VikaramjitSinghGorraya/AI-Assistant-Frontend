@@ -1,4 +1,4 @@
-import axios from `axios`;
+import axios from "axios";
 
 export const askQuestion = async (
   question: string,
@@ -34,11 +34,14 @@ export const searchWeb = async (question: string, conversationId?: string) => {
 
 export const signup = async (name: string, email: string, password: string) => {
   try {
-    const response = await axios.post(`${process.env.BACKEND_URL}/auth/signup`, {
-      name,
-      email,
-      password,
-    });
+    const response = await axios.post(
+      `${process.env.BACKEND_URL}/auth/signup`,
+      {
+        name,
+        email,
+        password,
+      }
+    );
     return response.data;
   } catch (err: any) {
     const message = err?.response?.data?.message;
