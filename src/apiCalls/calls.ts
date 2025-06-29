@@ -6,7 +6,7 @@ export const askQuestion = async (
 ) => {
   try {
     const response = await axios.post(
-      `${process.env.BACKEND_URL}/ask/question`,
+      `${process.env.BACKEND_URL}/api/ask/question`,
       { question, conversationId },
       { withCredentials: true } // if using cookies for auth
     );
@@ -22,7 +22,7 @@ export const askQuestion = async (
 
 export const searchWeb = async (question: string, conversationId?: string) => {
   const response = await axios.post(
-    `${process.env.BACKEND_URL}/search/query`,
+    `${process.env.BACKEND_URL}/api/search/query`,
     {
       question,
       conversationId,
@@ -35,7 +35,7 @@ export const searchWeb = async (question: string, conversationId?: string) => {
 export const signup = async (name: string, email: string, password: string) => {
   try {
     const response = await axios.post(
-      `${process.env.BACKEND_URL}/auth/signup`,
+      `${process.env.BACKEND_URL}/api/auth/signup`,
       {
         name,
         email,
@@ -52,7 +52,7 @@ export const signup = async (name: string, email: string, password: string) => {
 export const signin = async (email: string, password: string) => {
   try {
     const response = await axios.post(
-      `${process.env.BACKEND_URL}/auth/signin`,
+      `${process.env.BACKEND_URL}/api/auth/signin`,
       {
         email,
         password,
@@ -70,7 +70,7 @@ export const signin = async (email: string, password: string) => {
 
 export const isLoggedIn = async () => {
   const response = await axios.get(
-    `${process.env.BACKEND_URL}/auth/isLoggedIn`,
+    `${process.env.BACKEND_URL}/api/auth/isLoggedIn`,
     {
       withCredentials: true,
     }
@@ -79,16 +79,19 @@ export const isLoggedIn = async () => {
 };
 
 export const signout = async () => {
-  const response = await axios.get(`${process.env.BACKEND_URL}/auth/signout`, {
-    withCredentials: true,
-  });
+  const response = await axios.get(
+    `${process.env.BACKEND_URL}/api/auth/signout`,
+    {
+      withCredentials: true,
+    }
+  );
   return response;
 };
 
 export const getConversations = async () => {
   try {
     const response = await axios.get(
-      `${process.env.BACKEND_URL}/conversations/getConversations`,
+      `${process.env.BACKEND_URL}/api/conversations/getConversations`,
       {
         withCredentials: true,
       }
@@ -104,7 +107,7 @@ export const getConversations = async () => {
 export const deleteConversation = async (conversationId: string) => {
   try {
     const response = await axios.get(
-      `${process.env.BACKEND_URL}/conversations/deleteConversation/${conversationId}`,
+      `${process.env.BACKEND_URL}/api/conversations/deleteConversation/${conversationId}`,
       { withCredentials: true }
     );
   } catch (err: any) {
