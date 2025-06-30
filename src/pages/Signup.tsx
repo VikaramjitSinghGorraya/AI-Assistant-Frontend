@@ -59,7 +59,7 @@ const Signup = () => {
     }
   };
   return (
-    <VStack w="100%" m="auto" spacing={5}>
+    <VStack w={{ base: "90%", md: "70%", lg: "50%" }} m="auto" spacing={5}>
       <Heading>Welcome Aboard!</Heading>
       <form
         style={{ width: "100%", textAlign: "center" }}

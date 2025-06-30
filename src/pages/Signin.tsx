@@ -36,7 +36,6 @@ const Signin = () => {
   };
 
   const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
-    console.log("Form Data:", formData);
     e.preventDefault();
     setRequestStatus({ ...requestStatus, loading: true });
     try {
@@ -60,7 +59,12 @@ const Signin = () => {
         style={{ width: "100%", textAlign: "center" }}
         onSubmit={submitHandler}
       >
-        <VStack w="50%" spacing={4} m="auto" h="100%">
+        <VStack
+          w={{ base: "90%", md: "70%", lg: "50%" }}
+          spacing={4}
+          m="auto"
+          h="100%"
+        >
           <Input
             name="email"
             placeholder="Your email"

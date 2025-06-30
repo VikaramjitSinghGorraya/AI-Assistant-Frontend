@@ -147,13 +147,14 @@ const ChatBox = ({ conversation, onNewConversation }: ChatBoxProps) => {
           </Button>
         </Flex>
       </form>
-      <HStack justifyContent={"space-between"} w="100%">
-        <HStack>
+      <HStack justifyContent={"space-evenly"} w="100%">
+        <HStack spacing={3}>
           <Button
             bg="transparent"
             color={askQuestionSelected ? "blue.600" : "black"}
             _hover={{ backgroundColor: "transparent" }}
             onClick={() => setAskQuestionSelected(true)}
+            p="0"
           >
             Ask Question
           </Button>
@@ -162,6 +163,7 @@ const ChatBox = ({ conversation, onNewConversation }: ChatBoxProps) => {
             color={!askQuestionSelected ? "blue.600" : "black"}
             _hover={{ backgroundColor: "transparent" }}
             onClick={() => setAskQuestionSelected(false)}
+            p={"0"}
           >
             Search Web
           </Button>
