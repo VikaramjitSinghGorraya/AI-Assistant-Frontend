@@ -46,14 +46,9 @@ const ChatBox = ({ conversation, onNewConversation }: ChatBoxProps) => {
     }
   }, [messages]);
 
-  const logoutHandler = () => {
-    signout()
-      .then(() => {
-        window.location.reload();
-      })
-      .catch((err) => {
-        console.error("Logout failed:", err);
-      });
+  const logoutHandler = async () => {
+    await signout();
+    window.location.reload();
   };
   const submitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
