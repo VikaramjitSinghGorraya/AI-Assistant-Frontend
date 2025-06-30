@@ -68,6 +68,7 @@ const Conversations = ({
 
       <Button
         size="sm"
+        p={4}
         colorScheme="blackAlpha"
         onClick={onNewChat}
         mb={2}
