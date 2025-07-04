@@ -59,13 +59,13 @@ const Signup = () => {
     }
   };
   return (
-    <VStack w={{ base: "90%", md: "70%", lg: "50%" }} m="auto" spacing={5}>
+    <VStack w={{ base: "100%", md: "70%", lg: "50%" }} m="auto" spacing={5}>
       <Heading>Welcome Aboard!</Heading>
       <form
         style={{ width: "100%", textAlign: "center" }}
         onSubmit={submitHandler}
       >
-        <VStack w="50%" spacing={4} m="auto" h="100%">
+        <VStack w={{ base: "90%", md: "70%", lg: "50%" }} spacing={4} m="auto">
           <Input
             name="name"
             placeholder="Name"
