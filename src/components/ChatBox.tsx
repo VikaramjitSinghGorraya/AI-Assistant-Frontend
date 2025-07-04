@@ -8,6 +8,7 @@ import {
   Box,
   Text,
 } from "@chakra-ui/react";
+import { QuestionIcon, SearchIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import { askQuestion, searchWeb, signout } from "../apiCalls/calls";
 
 interface Message {
@@ -142,34 +143,51 @@ const ChatBox = ({ conversation, onNewConversation }: ChatBoxProps) => {
           </Button>
         </Flex>
       </form>
-      <HStack justifyContent={"space-evenly"} w="100%">
+      <HStack
+        justifyContent={[
+          "space-around",
+          "space-around",
+          "space-around",
+          "space-between",
+        ]}
+        alignItems="center"
+        w="100%"
+        wrap="nowrap"
+        spacing={4}
+        overflowX="auto"
+      >
         <HStack spacing={3}>
           <Button
             bg="transparent"
             color={askQuestionSelected ? "blue.600" : "black"}
             _hover={{ backgroundColor: "transparent" }}
             onClick={() => setAskQuestionSelected(true)}
-            p="0"
+            p={0}
           >
-            Ask Question
+            <QuestionIcon display={{ base: "inline", md: "none" }} />
+            <Text display={{ base: "none", md: "inline" }}>Ask Question</Text>
           </Button>
+
           <Button
             bg="transparent"
             color={!askQuestionSelected ? "blue.600" : "black"}
             _hover={{ backgroundColor: "transparent" }}
             onClick={() => setAskQuestionSelected(false)}
-            p={"0"}
+            p={0}
           >
-            Search Web
+            <SearchIcon display={{ base: "inline", md: "none" }} />
+            <Text display={{ base: "none", md: "inline" }}>Search Web</Text>
           </Button>
         </HStack>
+
+        {/* Logout */}
         <Button
           bg="transparent"
-          color={!askQuestionSelected ? "blue.600" : "black"}
           _hover={{ backgroundColor: "transparent" }}
           onClick={logoutHandler}
         >
-          Logout
+          <ArrowRightIcon display={{ base: "inline", md: "none" }} />
+          <Text display={{ base: "none", md: "inline" }}>Logout</Text>
         </Button>
       </HStack>
     </VStack>
