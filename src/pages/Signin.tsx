@@ -53,7 +53,7 @@ const Signin = () => {
     }
   };
   return (
-    <VStack w="100%" m="auto" spacing={5}>
+    <VStack w="100%" m="auto" overflowY={"hidden"} spacing={5}>
       <Heading>Welcome Back!</Heading>
       <form
         style={{ width: "100%", textAlign: "center" }}
